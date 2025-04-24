@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Baby Name Generator</title>
+  <nav>
+    <a href="webapp.html">Baby Name Generator</a>
+    <a href="index.html">Biography</a>
+    <a href="products.html">Work Experience</a>
+  </nav>
+  
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      text-align: center;
+      background: #fce4ec;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #d81b60;
+      margin-bottom: 30px;
+    }
+
+    .name-display {
+      font-size: 2em;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border: 3px solid #d81b60;
+      border-radius: 12px;
+      width: fit-content;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #d81b60;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #ad1457;
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Baby Name Generator</h1>
+  <div class="name-display" id="displayName">Click a button!</div>
+  <button onclick="generateName('boy')">👶 Generate Boy Name</button>
+  <button onclick="generateName('girl')">👧 Generate Girl Name</button>
+
+  <script>
+    const boyNames = ["Liam", "Noah", "Oliver", "Elijah", "James", "William", "Benjamin", "Lucas", "Henry", "Alexander"];
+    const girlNames = ["Olivia", "Emma", "Ava", "Charlotte", "Sophia", "Amelia", "Isabella", "Mia", "Evelyn", "Harper"];
+
+    function generateName(gender) {
+      let name = '';
+      if (gender === "boy") {
+        const randomIndex = Math.floor(Math.random() * boyNames.length);
+        name = boyNames[randomIndex];
+      } else if (gender === "girl") {
+        const randomIndex = Math.floor(Math.random() * girlNames.length);
+        name = girlNames[randomIndex];
+      }
+
+      document.getElementById("displayName").textContent = name;
+    }
+  </script>
+</body>
+</html>
+
